@@ -3,71 +3,304 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SINTAK 2025</title>
-    <link rel="stylesheet" href="" />
+    <title>SINTAK 2026</title>
+    <meta name="description" content="SINTAK 2026 - Study Club Informatika Polsri. Code to Create, Secure to Elevate." />
+    <!-- Google Fonts for Tech/Cyber aesthetic -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for the functional icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="logo">
-        <img src="Assets/Logo_Sintak.png" alt="" />
-      </div>
-      <div class="teks">
-        <h1>SINTAK <span>2025</span></h1>
-        <h4>EXPLORE THE CODE, UNLOCK THE WORLD</h4>
-      </div>
+    <!-- Background elements for cyber aesthetic -->
+    <div class="cyber-bg">
+      <canvas id="bgCanvas"></canvas>
+      <div class="grid"></div>
     </div>
-    <div class="link-link">
-      <a href="https://www.instagram.com/sintakpolsri" target="_blank">
-        <button class="btn-icon">
-          <img src="Assets/instagram.png" alt="" class="icon-left" />
-          <span class="btn-text">Instagram</span>
-        </button>
-      </a>
 
-      <a href="https://www.youtube.com/@sintakpolsri" target="_blank"
-        ><button class="btn-icon">
-          <img src="Assets/youtube.png" alt="" class="icon-left" />
-          <span class="btn-text">Youtube</span>
-        </button></a
-      >
-      
-      <a href="mailto:studyclubinformaticspolsri@gmail.com"
-        ><button class="btn-icon">
-          <img src="Assets/gmail.png" alt="" class="icon-left" />
-          <span class="btn-text">Gmail</span>
-        </button></a
-      >
-      <a
-        href="https://api.whatsapp.com/send?phone=62895604953816"
-        target="_blank"
-        ><button class="btn-icon">
-          <img src="Assets/wa.png" alt="" class="icon-left" />
-          <span class="btn-text">Admin 1</span>
-        </button></a
-      >
-      <a
-        href="https://api.whatsapp.com/send?phone=6285368485452"
-        target="_blank"
-        ><button class="btn-icon">
-          <img src="Assets/wa.png" alt="" class="icon-left" />
-          <span class="btn-text">Admin 2</span>
-        </button></a
-      >
-      <a
-        href="https://api.whatsapp.com/send?phone=62887437462614"
-        target="_blank"
-        ><button class="btn-icon">
-          <img src="Assets/wa.png" alt="" class="icon-left" />
-          <span class="btn-text">Admin 3</span>
-        </button></a
-      >
+    <!-- Main Content -->
+    <div class="container">
+      <div class="header">
+        <div class="glow-lines"></div>
+        <div class="central-graphic">
+          <!-- Circular borders for the tech look -->
+          <div class="circle-border"></div>
+          <div class="circle-inner"></div>
+          
+          <div class="teks">
+            <div class="animated-logo-container">
+               <img src="Assets/Logo_Sintak.png" alt="Logo" class="main-logo-inside" />
+            </div>
+            <h1>SINTAK<br><span>2026</span></h1>
+            
+            <div class="cyber-icons">
+               <i class="fa-solid fa-code"></i>
+               <i class="fa-solid fa-terminal"></i>
+               <i class="fa-solid fa-shield-halved"></i>
+            </div>
+          </div>
+        </div>
+        <h4 class="subtitle">STUDY CLUB INFORMATIKA </h4>
+        <p class="tagline">CODE TO CREATE, SECURE TO ELEVATE</p>
+        <div class="glow-divider"></div>
+      </div>
+
+      <div class="link-link">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sintakpolsri" target="_blank" id="link-instagram">
+          <button class="btn-icon">
+            <img src="Assets/instagram.png" alt="" class="icon-left" />
+            <span class="btn-text">Instagram</span>
+            <div class="btn-glitch"></div>
+          </button>
+        </a>
+
+        <!-- YouTube (GATEKEEPER) -->
+        <a href="https://www.youtube.com/@sintakpolsri" target="_blank" id="link-youtube">
+          <button class="btn-icon btn-youtube-gate">
+            <img src="Assets/youtube.png" alt="" class="icon-left" />
+            <span class="btn-text">Youtube</span>
+            <div class="btn-glitch"></div>
+            <!-- Pulse indicator -->
+            <div class="yt-pulse-indicator">
+              <i class="fa-solid fa-arrow-right"></i>
+              <span>Klik untuk lanjut</span>
+            </div>
+          </button>
+        </a>
+        
+        <!-- Gmail -->
+        <a href="mailto:studyclubinformaticspolsri@gmail.com" id="link-gmail">
+          <button class="btn-icon">
+            <img src="Assets/gmail.png" alt="" class="icon-left" />
+            <span class="btn-text">Gmail</span>
+            <div class="btn-glitch"></div>
+          </button>
+        </a>
+
+        <!-- GATE SECTION: YouTube Gate Message + Countdown + WA Buttons -->
+        <div id="yt-gate-section" class="yt-gate-section">
+          <!-- State 1: Before clicking YouTube -->
+          <div id="gate-locked" class="gate-locked">
+            <div class="gate-lock-icon">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <p class="gate-lock-text">
+              <i class="fa-solid fa-circle-info"></i>
+              Klik tombol <strong>YouTube</strong> & Subscribe di atas untuk membuka kontak admin
+            </p>
+            <div class="gate-lock-bar">
+              <div class="gate-lock-bar-inner"></div>
+            </div>
+          </div>
+
+          <!-- State 2: Countdown Timer -->
+          <div id="gate-countdown" class="gate-countdown" style="display: none;">
+            <div class="countdown-ring-wrapper">
+              <svg class="countdown-ring" viewBox="0 0 120 120">
+                <circle class="countdown-ring-bg" cx="60" cy="60" r="52" />
+                <circle id="countdown-progress" class="countdown-ring-progress" cx="60" cy="60" r="52" />
+              </svg>
+              <div class="countdown-number" id="countdown-number">30</div>
+            </div>
+            <div class="countdown-info">
+              <p class="countdown-title">
+                <i class="fa-solid fa-unlock-keyhole"></i>
+                Membuka kontak admin...
+              </p>
+              <p class="countdown-subtitle">Subscribe & tonton video sambil menunggu</p>
+              <div class="countdown-bar">
+                <div class="countdown-bar-fill" id="countdown-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- State 3: WA Buttons (revealed after countdown) -->
+          <div id="gate-unlocked" class="gate-unlocked" style="display: none;">
+            <div class="gate-unlocked-header">
+              <div class="gate-success-icon">
+                <i class="fa-solid fa-lock-open"></i>
+              </div>
+              <p class="gate-success-text">Kontak admin terbuka!</p>
+            </div>
+
+            <a href="https://api.whatsapp.com/send?phone=6282279840310" target="_blank" class="wa-link">
+              <button class="btn-icon btn-wa">
+                <img src="Assets/wa.png" alt="" class="icon-left" />
+                <span class="btn-text">Admin 1</span>
+                <div class="btn-glitch"></div>
+              </button>
+            </a>
+            
+            <a href="https://api.whatsapp.com/send?phone=6282177632357" target="_blank" class="wa-link">
+              <button class="btn-icon btn-wa">
+                <img src="Assets/wa.png" alt="" class="icon-left" />
+                <span class="btn-text">Admin 2</span>
+                <div class="btn-glitch"></div>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <script>
+      // ========== BACKGROUND PARTICLES ==========
+      const canvas = document.getElementById('bgCanvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      const chars = ['</>', '{ }', '[ ]', '0101', '1010', 'if()', '=>', 'function()', 'null', 'void'];
+
+      function init() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        particles = [];
+        const numParticles = Math.floor((width * height) / 12000); 
+        for(let i=0; i<numParticles; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 1.5,
+                vy: (Math.random() - 0.5) * 1.5,
+                size: Math.random() * 2 + 1,
+                char: Math.random() > 0.8 ? chars[Math.floor(Math.random()*chars.length)] : null,
+                alpha: Math.random() * 0.5 + 0.1
+            });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        for(let i=0; i<particles.length; i++) {
+            let p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            if(p.x < 0 || p.x > width) p.vx *= -1;
+            if(p.y < 0 || p.y > height) p.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0, 255, 255, ${p.alpha})`;
+            ctx.fill();
+            if (p.char) {
+                ctx.font = '12px Chakra Petch';
+                ctx.fillStyle = `rgba(0, 255, 255, ${p.alpha * 1.5})`;
+                ctx.fillText(p.char, p.x + 8, p.y + 4);
+            }
+            for(let j=i+1; j<particles.length; j++) {
+                let p2 = particles[j];
+                let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                if(dist < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.strokeStyle = `rgba(0, 255, 255, ${(120 - dist)/120 * 0.2})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', init);
+      init();
+      draw();
+
+      // ========== YOUTUBE GATE LOGIC ==========
+      const COUNTDOWN_SECONDS = 30;
+      const STORAGE_KEY = 'sintak_yt_unlocked';
+
+      const linkYoutube = document.getElementById('link-youtube');
+      const gateLocked = document.getElementById('gate-locked');
+      const gateCountdown = document.getElementById('gate-countdown');
+      const gateUnlocked = document.getElementById('gate-unlocked');
+      const countdownNumber = document.getElementById('countdown-number');
+      const countdownProgress = document.getElementById('countdown-progress');
+      const countdownBarFill = document.getElementById('countdown-bar-fill');
+
+      // Check if already unlocked (within 24 hours)
+      function checkUnlocked() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const timestamp = parseInt(stored, 10);
+          const now = Date.now();
+          // Valid for 24 hours
+          if (now - timestamp < 24 * 60 * 60 * 1000) {
+            showUnlocked();
+            return true;
+          } else {
+            localStorage.removeItem(STORAGE_KEY);
+          }
+        }
+        return false;
+      }
+
+      function showUnlocked() {
+        gateLocked.style.display = 'none';
+        gateCountdown.style.display = 'none';
+        gateUnlocked.style.display = 'flex';
+        // Animate WA buttons in
+        setTimeout(() => {
+          gateUnlocked.classList.add('revealed');
+        }, 100);
+      }
+
+      function startCountdown() {
+        gateLocked.style.display = 'none';
+        gateCountdown.style.display = 'flex';
+
+        let remaining = COUNTDOWN_SECONDS;
+        const circumference = 2 * Math.PI * 52;
+        countdownProgress.style.strokeDasharray = circumference;
+        countdownProgress.style.strokeDashoffset = 0;
+
+        countdownNumber.textContent = remaining;
+        countdownBarFill.style.width = '0%';
+
+        const interval = setInterval(() => {
+          remaining--;
+          countdownNumber.textContent = remaining;
+
+          // Update circle
+          const progress = (COUNTDOWN_SECONDS - remaining) / COUNTDOWN_SECONDS;
+          countdownProgress.style.strokeDashoffset = circumference * progress;
+
+          // Update bar
+          countdownBarFill.style.width = (progress * 100) + '%';
+
+          if (remaining <= 0) {
+            clearInterval(interval);
+            // Save to localStorage
+            localStorage.setItem(STORAGE_KEY, Date.now().toString());
+            // Show unlocked
+            setTimeout(() => {
+              showUnlocked();
+            }, 300);
+          }
+        }, 1000);
+      }
+
+      // Initialize
+      if (!checkUnlocked()) {
+        // Listen for YouTube click
+        linkYoutube.addEventListener('click', function(e) {
+          // Don't prevent default — let the YouTube link open
+          // But start the countdown
+          if (gateCountdown.style.display === 'none' && gateUnlocked.style.display === 'none') {
+            setTimeout(() => {
+              startCountdown();
+              // Scroll to the gate section smoothly
+              document.getElementById('yt-gate-section').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+              });
+            }, 500);
+          }
+        });
+      }
+    </script>
   </body>
 </html>
